@@ -1,0 +1,926 @@
+/* ==========================================================================
+   SACRED TESTIMONIES — MASTER LITURGICAL STYLESHEET
+   Strict Monochromatic Black & White Cathedral Aesthetic
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+    /* Pure Monochromatic Palette */
+    --color-abyss: #050507;
+    --color-sanctuary: #0a0a0d;
+    --color-card-bg: #111116;
+    --color-card-elevated: #181820;
+    --color-border-subtle: rgba(255, 255, 255, 0.12);
+    --color-border-prominent: rgba(255, 255, 255, 0.35);
+    --color-border-luminous: rgba(255, 255, 255, 0.85);
+    --color-text-pure: #ffffff;
+    --color-text-liturgical: #f2f2f5;
+    --color-text-secondary: #c5c5d0;
+    --color-text-muted: #858593;
+    --color-halo: rgba(255, 255, 255, 0.15);
+    --color-halo-strong: rgba(255, 255, 255, 0.35);
+
+    /* Fonts */
+    --font-heading: 'Cinzel', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+    --font-monument: 'Cinzel Decorative', 'Cinzel', serif;
+    --font-scripture: 'Cormorant Garamond', 'EB Garamond', Garamond, Georgia, serif;
+    --font-body: 'EB Garamond', Georgia, serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* Spacing & Dimensions */
+    --max-content-width: 1100px;
+    --nav-height: 72px;
+}
+
+/* Base Reset & Typography */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-abyss);
+    color: var(--color-text-liturgical);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-body);
+    background-color: var(--color-abyss);
+    background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 65%),
+        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.04) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 40px);
+    background-attachment: fixed;
+    color: var(--color-text-liturgical);
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Subtle Vignette Frame around viewport */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.85);
+    z-index: 999;
+}
+
+/* ==========================================================================
+   TOP SANCTUARY BANNER (Liturgical Motto)
+   ========================================================================== */
+.sanctuary-banner {
+    background-color: #000000;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding: 8px 16px;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.sanctuary-banner .cross-symbol {
+    color: var(--color-text-pure);
+    font-size: 0.9rem;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+header.site-header {
+    background: rgba(10, 10, 13, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border-prominent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.header-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--nav-height);
+    gap: 16px;
+}
+
+.sanctuary-logo {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sanctuary-logo .logo-cross {
+    font-family: var(--font-monument);
+    font-size: 1.35rem;
+    letter-spacing: 0.15em;
+    color: var(--color-text-pure);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.sanctuary-logo .logo-cross::before {
+    content: '†';
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.sanctuary-logo .logo-subtitle {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    margin-top: -2px;
+}
+
+/* Liturgical Navigation Menu */
+nav.sacred-nav {
+    display: flex;
+    flex-shrink: 1;
+}
+
+nav.sacred-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 4px 6px;
+    margin: 0;
+    padding: 4px 0;
+}
+
+nav.sacred-nav li {
+    position: relative;
+}
+
+nav.sacred-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 6px 9px;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+
+nav.sacred-nav a .nav-section {
+    font-family: var(--font-sans);
+    font-size: 0.54rem;
+    letter-spacing: 0.14em;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    margin-bottom: 1px;
+}
+
+nav.sacred-nav a .nav-title {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+nav.sacred-nav a:hover {
+    color: var(--color-text-pure);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-border-subtle);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+nav.sacred-nav a:hover .nav-title {
+    color: var(--color-text-pure);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+nav.sacred-nav a:hover .nav-section {
+    color: var(--color-text-liturgical);
+}
+
+/* Active Link State */
+nav.sacred-nav a.active {
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid var(--color-border-prominent);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.12), inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+nav.sacred-nav a.active .nav-section {
+    color: var(--color-text-pure);
+}
+
+nav.sacred-nav a.active .nav-title {
+    color: var(--color-text-pure);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+nav.sacred-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: var(--color-text-pure);
+    box-shadow: 0 0 8px #ffffff;
+}
+
+/* Origin Return Badge for non-index pages */
+.origin-badge-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0;
+    max-width: var(--max-content-width);
+    padding: 0 24px;
+}
+
+.origin-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    padding: 6px 18px;
+    border: 1px solid var(--color-border-prominent);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.origin-badge:hover {
+    color: var(--color-text-pure);
+    border-color: var(--color-text-pure);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   MAIN SACRED SANCTUARY CONTAINER
+   ========================================================================== */
+main.sanctuary-main {
+    flex: 1;
+    max-width: var(--max-content-width);
+    width: 100%;
+    margin: 32px auto 60px;
+    padding: 0 24px;
+}
+
+/* Cathedral Altar / Reliquary Hero */
+.reliquary-altar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+/* Decorative Cruciform Flankers */
+.liturgical-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 16px 0;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+}
+
+.liturgical-ornament .line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-prominent), transparent);
+}
+
+.liturgical-ornament .cross {
+    color: var(--color-text-pure);
+    font-size: 1.1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Sacred Image Frame (Ecclesiastical Lithograph Plaque) */
+.cross-relic-frame {
+    position: relative;
+    margin: 20px 0 28px;
+    padding: 16px;
+    background: #ffffff;
+    border: 3px double #000000;
+    box-shadow: 
+        0 0 0 1px var(--color-border-prominent),
+        0 0 0 6px var(--color-card-bg),
+        0 0 0 7px var(--color-border-prominent),
+        0 15px 45px rgba(0, 0, 0, 0.9),
+        0 0 35px var(--color-halo);
+    border-radius: 3px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 380px;
+    width: 100%;
+}
+
+.cross-relic-frame:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 
+        0 0 0 1px var(--color-text-pure),
+        0 0 0 6px var(--color-card-bg),
+        0 0 0 7px var(--color-text-pure),
+        0 20px 55px rgba(0, 0, 0, 0.95),
+        0 0 50px var(--color-halo-strong);
+}
+
+.cross-relic-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: contrast(1.1) grayscale(100%);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Plaque Corner Embellishments */
+.cross-relic-frame::before,
+.cross-relic-frame::after {
+    content: '❖';
+    position: absolute;
+    color: var(--color-text-pure);
+    font-size: 0.75rem;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+.cross-relic-frame::before { top: -14px; left: -14px; }
+.cross-relic-frame::after { bottom: -14px; right: -14px; }
+
+/* Inscriptions and Titles */
+.apostle-title-block {
+    margin-top: 10px;
+}
+
+.apostle-pretitle {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+
+.apostle-title {
+    font-family: var(--font-monument);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    letter-spacing: 0.08em;
+    color: var(--color-text-pure);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.25);
+    margin-bottom: 12px;
+}
+
+.apostle-epitaph {
+    font-family: var(--font-scripture);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   THE SACRED SCRIPTURE GALLERY (7 Verses)
+   ========================================================================== */
+.scripture-sanctuary {
+    margin-top: 40px;
+}
+
+.sanctuary-section-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-label {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-pure);
+    margin-top: 4px;
+}
+
+.verses-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Consecrated Scripture Card */
+.scripture-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border-subtle);
+    border-left: 4px solid var(--color-border-prominent);
+    padding: 24px 28px;
+    position: relative;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.scripture-card:hover {
+    border-color: var(--color-border-prominent);
+    border-left: 4px solid var(--color-text-pure);
+    background: var(--color-card-elevated);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+/* Card Top Metadata */
+.card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.verse-ordinal {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.verse-reference {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-text-pure);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 3px 10px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 2px;
+}
+
+/* Scripture Text */
+.scripture-quote-body {
+    position: relative;
+}
+
+.scripture-quote {
+    font-family: var(--font-scripture);
+    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+    font-style: italic;
+    color: var(--color-text-liturgical);
+    line-height: 1.7;
+    margin: 0;
+    position: relative;
+}
+
+.scripture-quote::before {
+    content: '“';
+    font-family: var(--font-monument);
+    font-size: 2.2rem;
+    color: var(--color-text-muted);
+    line-height: 0;
+    position: relative;
+    top: 10px;
+    margin-right: 6px;
+}
+
+.scripture-quote::after {
+    content: '”';
+    font-family: var(--font-monument);
+    font-size: 2.2rem;
+    color: var(--color-text-muted);
+    line-height: 0;
+    position: relative;
+    top: 12px;
+    margin-left: 6px;
+}
+
+/* Exegetical Devotional Annotation */
+.theological-note {
+    margin-top: 12px;
+    padding-top: 8px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theological-note::before {
+    content: '†';
+    color: var(--color-border-prominent);
+    font-size: 0.85rem;
+}
+
+/* Interactive Inscribed Toast / Copy prompt */
+.copy-hint {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    position: absolute;
+    bottom: 8px;
+    right: 14px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.scripture-card:hover .copy-hint {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   APOSTOLIC PILGRIMAGE NAVIGATOR (Footer Pager)
+   ========================================================================== */
+.apostolic-pager {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    gap: 12px;
+    margin: 56px 0 32px;
+    padding-top: 36px;
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+.pager-item {
+    text-decoration: none;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border-subtle);
+    padding: 12px 10px;
+    text-align: center;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.pager-item .pager-num {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.pager-item .pager-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--color-text-liturgical);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.pager-item:hover {
+    border-color: var(--color-border-prominent);
+    background: var(--color-card-elevated);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.pager-item:hover .pager-name {
+    color: var(--color-text-pure);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.pager-item.current {
+    border-color: var(--color-border-prominent);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.04);
+}
+
+.pager-item.current .pager-name {
+    color: var(--color-text-pure);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   SACRED SOLEMN FOOTER (Jesus Monument)
+   ========================================================================== */
+footer.solemn-footer {
+    background: #000000;
+    border-top: 1px solid var(--color-border-prominent);
+    position: relative;
+    padding: 64px 24px 40px;
+    margin-top: auto;
+    text-align: center;
+    box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.8);
+}
+
+footer.solemn-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    box-shadow: 0 0 10px #ffffff;
+}
+
+.footer-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Christ Medallion */
+.christ-medallion {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Outer Halo Rings */
+.christ-halo-ring {
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 1px dashed var(--color-border-prominent);
+    animation: slowSpin 60s linear infinite;
+    pointer-events: none;
+}
+
+.christ-halo-glow {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
+    pointer-events: none;
+}
+
+@keyframes slowSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.christ-image-frame {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff;
+    border: 3px double #000000;
+    box-shadow: 0 0 0 2px var(--color-text-pure), 0 10px 30px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.christ-image-frame:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 3px var(--color-text-pure), 0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+.christ-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.15) grayscale(100%);
+}
+
+/* Footer Sacred Inscription */
+.christ-title-latin {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+}
+
+.christ-proclamation {
+    font-family: var(--font-monument);
+    font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+    font-style: italic;
+    color: var(--color-text-pure);
+    letter-spacing: 0.05em;
+    line-height: 1.35;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+    margin-bottom: 14px;
+}
+
+.christ-scripture-anchor {
+    font-family: var(--font-scripture);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.footer-liturgical-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.footer-liturgical-divider .divider-line {
+    flex: 1;
+    max-width: 140px;
+    height: 1px;
+    background: var(--color-border-subtle);
+}
+
+.footer-liturgical-divider .divider-cross {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-credits {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION (Copy Verse)
+   ========================================================================== */
+#sacred-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #000000;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: 1px solid var(--color-text-pure);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.9), 0 0 25px rgba(255,255,255,0.3);
+    border-radius: 2px;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#sacred-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT
+   ========================================================================== */
+@media (max-width: 1140px) {
+    .header-inner {
+        flex-direction: column;
+        padding: 14px 20px;
+        gap: 14px;
+    }
+    
+    .sanctuary-logo {
+        align-items: center;
+    }
+
+    nav.sacred-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    nav.sacred-nav a {
+        padding: 6px 10px;
+    }
+    
+    nav.sacred-nav a .nav-title {
+        font-size: 0.75rem;
+    }
+
+    .cross-relic-frame {
+        max-width: 300px;
+    }
+    
+    .christ-medallion {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .christ-image-frame {
+        width: 145px;
+        height: 145px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sanctuary-banner {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+    }
+
+    .apostle-title {
+        font-size: 1.6rem;
+    }
+
+    .scripture-card {
+        padding: 18px 20px;
+    }
+
+    .card-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .apostolic-pager {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles for Archival Quality */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+    
+    .site-header, .apostolic-pager, .sanctuary-banner {
+        display: none !important;
+    }
+    
+    .scripture-card {
+        background: #ffffff !important;
+        border: 1px solid #000000 !important;
+        color: #000000 !important;
+        page-break-inside: avoid;
+    }
+    
+    .scripture-quote {
+        color: #000000 !important;
+    }
+}
