@@ -1,5 +1,5 @@
 /**
- * SACRED TESTIMONIES — SCRIPTURE INTERACTION
+ * APOSTOLIC MESSAGES — SCRIPTURE INTERACTION
  * Handles scripture inscription (copy), keyboard pilgrimage navigation,
  * and reverent interactive states.
  */
