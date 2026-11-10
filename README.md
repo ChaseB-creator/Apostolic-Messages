@@ -1,18 +1,11 @@
 # Apostolic Message
 
-This repository contains two static websites. There is no build or compile step; GitHub Pages serves the HTML, CSS, JavaScript, and images directly.
+This project brings together two independent, mobile-friendly collections of apostolic scripture and reflections. Open the home page (`index.html`) to choose which collection to visit.
 
-## Publish both sites with GitHub Pages
+## Apostolic Messages
 
-1. Create a GitHub repository and upload the contents of this folder, keeping the `Apostolic-Messages` and `My Version` folders intact.
-2. In the repository, open **Settings → Pages** and set the build and deployment source to **GitHub Actions**.
-3. Push or upload the files to the `main` branch. The included Pages workflow will publish the websites.
-4. Share the published repository URL. The home page links to both sites, and each site can also be opened directly:
-   - `https://<your-username>.github.io/<repository>/Apostolic-Messages/`
-   - `https://<your-username>.github.io/<repository>/My%20Version/`
+The `Apostolic-Messages/` website presents scripture and testimonies associated with the apostles in a dark, cathedral-inspired design. Browse individual apostle pages, move between them using the site navigation, and click or focus a scripture card to copy its text.
 
-The workflow runs again whenever you update the `main` branch. GitHub may take a minute or two to publish a change.
+## My Version
 
-## Open locally
-
-For a quick preview, open this folder's `index.html` in a browser. The links work without compiling anything. To test through a local web server instead, run `python -m http.server` from this folder and open `http://localhost:8000`.
+The `My Version/` website is a simpler collection of verses, organized into four sections. Its navigation links connect the sections, with an origin page to return to the beginning.
